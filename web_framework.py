@@ -1,18 +1,28 @@
-from webob import Request, Response
+from wsgi.web_server_gateway_interface import WebServerGatewayInterface
 
 
-class API:
+class WebFramework:
     def __init__(self):
         self.routes = dict()
 
-    def __call__(self, environ, start_response):
-        request = Request(environ)
+    def __call__(self, environ, response):
+        body = self.handle_request(environ)
 
-        # response = Response()
-        # response.text = "Hello, World!"
-        response = self.handle_request(request)
+        status = '200 OK'
+        headers = [('Content-type', 'text/html; charset=utf-8')]
 
-        return response(environ, start_response)
+        response(status, headers)
+
+        return [body.encode()]
+
+    def start_server(self, host='', port=8080):
+        with WebServerGatewayInterface(host, port, self) as server:
+            if not host:
+                print("Serving on port %d \nVisit http://127.0.0.1:%d" % (port, port))
+            else:
+                print("Serving on port %d \nVisit http://%s:%d" % (port, host, port))
+            print("To kill the server enter 'control + c'")
+            server.serve_forever()
 
     def route(self, path):
         def wrapper(handler):
@@ -22,13 +32,13 @@ class API:
         return wrapper
 
     def handle_request(self, request):
-        user_agent = request.environ.get("HTTP_USER_AGENT", "No user agent found")
 
-        response = Response()
-        response.text = f"Hello, my friend with this user agent: {user_agent}"
+        request_path = request['PATH_INFO']
 
-        if request.path in self.routes:
-            self.routes[request.path](request, response)
+        if request_path in self.routes:
+            response = self.routes[request_path](request)
+        else:
+            print("Route " + request_path + " not found")
+            response = "Page not found"
 
         return response
-
