@@ -11,13 +11,22 @@ By exploring the documentation of  and wsgiref
 
 
 class WebServerGatewayInterface:
-    def __enter__(self, host, port, app):
+
+    def __init__(self, host, port, app):
+        self.host = host
+        self.port = port
+        self.app = app
+
+    def __enter__(self):
         """
         Will be called when using the "with" python call
         :param host: the host ip address
         :param port: the host port
         :param app: the app that will run the web framework
         """
-        server = WSGIHTTPServer((host, port), WSGIRequestHandler)
-        server.setup_app(app)
-        return app
+        self.server = WSGIHTTPServer((self.host, self.port), WSGIRequestHandler)
+        self.server.setup_app(self.app)
+        return self.server
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.server.shutdown()
