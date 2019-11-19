@@ -10,7 +10,7 @@ def home(request):
 
 @server.route("/about")
 def about(request):
-    return "Hello from the ABOUT page"
+    return server.open_template('index')
 
 
 server.start_server()

@@ -1,4 +1,5 @@
 from wsgi.web_server_gateway_interface import WebServerGatewayInterface
+from os.path import join
 
 
 class WebFramework:
@@ -14,6 +15,11 @@ class WebFramework:
         response(status, headers)
 
         return [body.encode()]
+
+    @staticmethod
+    def open_template(name):
+        f = open(join('templates', name) + '.html', 'r').read()
+        return f
 
     def start_server(self, host='', port=8080):
         with WebServerGatewayInterface(host, port, self) as server:
