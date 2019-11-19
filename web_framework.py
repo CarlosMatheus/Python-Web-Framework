@@ -1,8 +1,11 @@
 from wsgi.web_server_gateway_interface import WebServerGatewayInterface
-from os.path import join
+from os.path import join, isfile
 
 
 class WebFramework:
+
+    is_templates_routes = {'images', 'styles'}.__contains__
+
     def __init__(self):
         self.routes = dict()
 
@@ -14,7 +17,10 @@ class WebFramework:
 
         response(status, headers)
 
-        return [body.encode()]
+        if hasattr(body, 'encode'):
+            return [body.encode()]
+        else:
+            return [body]
 
     @staticmethod
     def open_template(name):
@@ -37,14 +43,32 @@ class WebFramework:
 
         return wrapper
 
+    def get_template(self, lt):
+        file = join(lt[1], lt[2])
+        file = join('templates', file)
+        if isfile(file):
+            f = open(file, 'rb').read()
+        else:
+            f = b''
+        return f
+
     def handle_request(self, request):
+
+        response = ""
 
         request_path = request['PATH_INFO']
 
-        if request_path in self.routes:
-            response = self.routes[request_path](request)
+        lt = request_path.split('/')
+
+        if len(lt) > 2:
+            first_part = lt[1]
+            if self.is_templates_routes(first_part):
+                response = self.get_template(lt)
         else:
-            print("Route " + request_path + " not found")
-            response = "Page not found"
+            if request_path in self.routes:
+                response = self.routes[request_path](request)
+            else:
+                print("Route " + request_path + " not found")
+                response = "Page not found"
 
         return response
