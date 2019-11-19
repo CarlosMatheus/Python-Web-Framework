@@ -1,13 +1,16 @@
-from web_framework import API
+from web_framework import WebFramework
 
-app = API()
-
-
-@app.route("/")
-def home(request, response):
-    response.text = "Hello from the HOME page"
+server = WebFramework()
 
 
-@app.route("/about")
-def about(request, response):
-    response.text = "Hello from the ABOUT page"
+@server.route("/")
+def home(request):
+    return "Hello from the HOME page"
+
+
+@server.route("/about")
+def about(request):
+    return "Hello from the ABOUT page"
+
+
+server.start_server()
