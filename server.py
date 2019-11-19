@@ -1,9 +1,9 @@
-from api import API
+from web_framework import API
 
 app = API()
 
 
-@app.route("/home")
+@app.route("/")
 def home(request, response):
     response.text = "Hello from the HOME page"
 
