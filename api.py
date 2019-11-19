@@ -8,8 +8,9 @@ class API:
     def __call__(self, environ, start_response):
         request = Request(environ)
 
-        response = Response()
-        response.text = "Hello, World!"
+        # response = Response()
+        # response.text = "Hello, World!"
+        response = self.handle_request(request)
 
         return response(environ, start_response)
 
@@ -25,6 +26,9 @@ class API:
 
         response = Response()
         response.text = f"Hello, my friend with this user agent: {user_agent}"
+
+        if request.path in self.routes:
+            self.routes[request.path](request, response)
 
         return response
 
