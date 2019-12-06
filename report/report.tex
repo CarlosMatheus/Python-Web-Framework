@@ -117,42 +117,42 @@ This interaction between client, WSGI server and web framework application can b
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=3.8in]{./imgs/wsgi.jpg}
-  \caption{WSGI Sequence diagram.}
+  \includegraphics[width=3.0in]{./imgs/wsgi.jpg}
+  \caption{WSGI Sequence diagram. The Client send a message that when it arrives on the host computer it goes to the WSGI HTTP server socket. The WSGI process the message and passes it to the Web Framework application. The web framework processes the message and send the response message to the WSGI server. The WSGI sends the message back to the client though its HTTP socket.}
   \label{fig_wsgi}
   \end{center}
 \end{figure}
 
+The hole intereaction between the classes can be seen on the Figure \ref{fig_project}, it shows the project classe, interactions, and hierarch.
+
 \begin{figure}
   \begin{center}
-  \includegraphics[width=3.8in]{./imgs/project.png}
-  \caption{Project Class architecture.}
+  \includegraphics[width=3.0in]{./imgs/project.png}
+  \caption{Project Class architecture. The Classes HTTP Server, Simple Handler, HTTP Handler are from standard Python libraries and they perform basic HTTP protocol operations, therefore they were not implemented for the scope of this project and some classes used them or inherited from them.}
   \label{fig_project}
   \end{center}
 \end{figure}
 
-The implementation was firstly based on the creation of the proper data structure. In order to do that, it was created the classes \i{Graph}, \i{Node}, and \i{Edge}.
 
-Then it was created an input reader, so the file \i{australia.csv} was read and the equivalent graph created.
-
-Afterward, it was made the methods \i{greedy} and \i{a\_star} on class \i{Graph}; therefore, it was possible to make the search on the graph.
 %-----------------------------------------------------------------------------
 \section{Project validation}
-The implementation also began with the creation of the data structure. To do that it was implemented the classes \i{ImplicitGraph} and \i{DynamicNode}, they define nodes of the search tree.
+In order to make every thing work, both the Python Web framework server and the WSGI were successfuly developed and they can be accessed by the \i{Github Repository}$^2$.
 
-Thereafter it was besides developed the methods \i{a\_star} and \i{greedy} on the \i{ImplicitGraph} class.
+The usage process can be followed by the repository \i{Readme} file.
 
-Then it was created the \i{generate\_case} to generate replicable random input for \i{Task 2.2}, and it was also inserted the suggested input from the activity specification.
+The Web framework also supports templates files. It is
+\blfootnote{$^2$https://github.com/CarlosMatheus/Python-Web-Framework}
+
 %-----------------------------------------------------------------------------
 \section{Conclusion}
 
 \subsection{Discussion}
  % topic discussion, possible improvements, problesms left, future improvements
+ omprehension and exemplification. Its difficulty was right-minded, although the amount
 \subsection{Conclusion}
 The work was quite enlightening when it comes to \i{Greedy} and \i{A*} search methods comprehension and exemplification. Its difficulty was right-minded, although the amount of code required made the work duller than complex.
 
 %-----------------------------------------------------------------------------
-
 
 
 % \begin{document}

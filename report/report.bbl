@@ -77,9 +77,65 @@
       \verb https://rahmonov.me/posts/write-python-framework-part-one/
       \endverb
     \endentry
+    \entry{c2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0193258f044cf94524524530f41e67eb}{%
+           family={Rahmonov},
+           familyi={R\bibinitperiod},
+           given={Jahongir},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0193258f044cf94524524530f41e67eb}
+      \strng{fullhash}{0193258f044cf94524524530f41e67eb}
+      \strng{bibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorbibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authornamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorfullhash}{0193258f044cf94524524530f41e67eb}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{How to write a Python web framework. Part II.}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://rahmonov.me/posts/write-python-framework-part-two/
+      \endverb
+      \verb{url}
+      \verb https://rahmonov.me/posts/write-python-framework-part-two/
+      \endverb
+    \endentry
+    \entry{c3}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0193258f044cf94524524530f41e67eb}{%
+           family={Rahmonov},
+           familyi={R\bibinitperiod},
+           given={Jahongir},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0193258f044cf94524524530f41e67eb}
+      \strng{fullhash}{0193258f044cf94524524530f41e67eb}
+      \strng{bibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorbibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authornamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorfullhash}{0193258f044cf94524524530f41e67eb}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{How to write a Python web framework. Part III.}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://rahmonov.me/posts/write-python-framework-part-three/
+      \endverb
+      \verb{url}
+      \verb https://rahmonov.me/posts/write-python-framework-part-three/
+      \endverb
+    \endentry
   \enddatalist
-  \missing{c2}
-  \missing{c3}
 \endrefsection
 \endinput
 

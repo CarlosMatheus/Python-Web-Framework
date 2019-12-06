@@ -7,6 +7,15 @@ class WebFramework:
     is_templates_routes = {'images', 'styles'}.__contains__
 
     def __init__(self):
+
+        class Methods:
+            def __init__(self):
+                self.get = 'GET'
+                self.post = 'POST'
+                self.put = 'PUT'
+                self.DELETE = 'DELETE'
+
+        self.methods = Methods()
         self.routes = dict()
 
     def __call__(self, environ, response):
@@ -57,8 +66,8 @@ class WebFramework:
         response = ""
 
         request_path = request['PATH_INFO']
-        request_path = request['REQUEST_METHOD']
-        request_path = request['CONTENT_TYPE']
+        request_method = request['REQUEST_METHOD']
+        query = request['QUERY_STRING']
 
         lt = request_path.split('/')
 
@@ -68,7 +77,7 @@ class WebFramework:
                 response = self.get_template(lt)
         else:
             if request_path in self.routes:
-                response = self.routes[request_path](request)
+                response = self.routes[request_path](request, request_method, query)
             else:
                 print("Route " + request_path + " not found")
                 response = "Page not found"
