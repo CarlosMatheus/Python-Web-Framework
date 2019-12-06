@@ -136,11 +136,48 @@ The hole intereaction between the classes can be seen on the Figure \ref{fig_pro
 
 %-----------------------------------------------------------------------------
 \section{Project validation}
-In order to make every thing work, both the Python Web framework server and the WSGI were successfuly developed and they can be accessed by the \i{Github Repository}$^2$.
+In order to make every thing work, both the Python Web framework server and the WSGI were successfuly developed and they can be accessed by the \i{Github Repository}$^2$. The usage process can be followed by the repository \i{Readme} file.
 
-The usage process can be followed by the repository \i{Readme} file.
+In order to test the code follow the steps:
+\begin{itemize}
+    \item Clone the repository$^2$.
+    \item Make sure to have python3 installed.
+    \item Go to the project folder.
+    \item Install the project dependencies: ``pip3 install -r requirements.txt''
+    \item Run the server python file: ``python3 server.py''
+    \item Now you can access the server by ``http://127.0.0.1:8080''
+    \item On the example there are the /, /about, and /put\_test\_route routes.
+    \item The / route returns a simple text answer with any HTTP method you send to it.
+    \item The /about route returns a HTTP web page as answer to any HTTP method to that route.
+    \item The /put\_test\_route route tests the PUT HTTP method and give a different response to the PUT method and it accepts a query. An exemple would be as shown on Code \ref{code_test_query}.
+\end{itemize}
 
-The Web framework also supports templates files. It is
+The project also supports HTML files. You just have to put them on ``templates'' folder as done on the download repository example. As an example by going to the /about route it is getted an HTML website as shown on Figure \ref{fig_site}.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=3.0in]{./imgs/example_page.png}
+  \caption{Example HTML page with embedded CSS and with images files referencied.}
+  \label{fig_site}
+  \end{center}
+\end{figure}
+
+To summaryse all that information it is possible to follow the usage of the Web Framework on the Code \ref{}
+
+\lstinputlisting[
+    language=python,
+    caption={Example server file that uses our Python Web Framework },
+    label={code_test_query},
+    style=cStyle,
+]{./texts/usage.py}
+
+\lstinputlisting[
+    language=python,
+    caption={Test PUT query},
+    label={code_test_query},
+    style=cStyle,
+]{./texts/test_query.txt}
+
 \blfootnote{$^2$https://github.com/CarlosMatheus/Python-Web-Framework}
 
 %-----------------------------------------------------------------------------
