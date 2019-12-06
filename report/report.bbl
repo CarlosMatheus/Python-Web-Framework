@@ -1,0 +1,85 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ford}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0551ebfa7fb1783ea2f8d62ca6d26fe5}{%
+           family={Ford},
+           familyi={F\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \strng{fullhash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \strng{bibnamehash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \strng{authorbibnamehash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \strng{authornamehash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \strng{authorfullhash}{0551ebfa7fb1783ea2f8d62ca6d26fe5}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Earthquake: Twitter Users Learned of Tremors Seconds Before Feeling Them}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://www.hollywoodreporter.com/news/earthquake-twitter-users-learned-tremors-226481
+      \endverb
+      \verb{url}
+      \verb http://www.hollywoodreporter.com/news/earthquake-twitter-users-learned-tremors-226481
+      \endverb
+    \endentry
+    \entry{c1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=0193258f044cf94524524530f41e67eb}{%
+           family={Rahmonov},
+           familyi={R\bibinitperiod},
+           given={Jahongir},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0193258f044cf94524524530f41e67eb}
+      \strng{fullhash}{0193258f044cf94524524530f41e67eb}
+      \strng{bibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorbibnamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authornamehash}{0193258f044cf94524524530f41e67eb}
+      \strng{authorfullhash}{0193258f044cf94524524530f41e67eb}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{How to write a Python web framework. Part I.}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://rahmonov.me/posts/write-python-framework-part-one/
+      \endverb
+      \verb{url}
+      \verb https://rahmonov.me/posts/write-python-framework-part-one/
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{c2}
+  \missing{c3}
+\endrefsection
+\endinput
+

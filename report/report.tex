@@ -1,0 +1,185 @@
+%!TeX spellcheck = en-US,en-DE
+% \documentclass[journal,11pt,draftclsnofoot,]{IEEEtran}
+\documentclass[journal,12pt,onecolumn,draftclsnofoot,]{IEEEtran}
+
+%\usepackage[retainorgcmds]{IEEEtrantools}
+%\usepackage{bibentry}
+\usepackage{xcolor,soul,framed} %,caption
+
+\colorlet{shadecolor}{yellow}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{../pdf/}{../jpeg/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+\usepackage[cmex10]{amsmath}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{url}
+\usepackage{float}
+
+\usepackage[style=numeric,backend=biber]{biblatex}
+
+\addbibresource{\jobname.bib}
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\let\i\textit
+
+% ----------------------------------------------
+
+% Definitions of languages: --------------------
+\usepackage{listings}
+\lstdefinestyle{cStyle}{
+  basicstyle=\scriptsize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbersep=5pt,
+  showspaces=false,
+  gobble=4,
+  tabsize=4,
+  showstringspaces=false,
+  showtabs=false,
+}
+\renewcommand*{\lstlistingname}{Code}
+
+% ----------------------------------------------
+
+% \hyphenation{op-tical net-works semi-conduc-tor}
+
+%\bstctlcite{IEEE:BSTcontrol}
+
+%=== TITLE & AUTHORS ====================================================================
+\begin{document}
+\bstctlcite{w}
+\title{Python Web Framework}
+\author{Carlos~Matheus~Barros~da~Silva$^1$
+\\
+Igor~Bragaia$^1$
+\\
+Prof. Lourenço Alves Pereira Jr}
+\markboth{INSTITUTO TECNOLÓGICO DE AERONÁUTICA, December~2019
+}{}
+% ====================================================================
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+% ====================================================================
+% ====================================================================
+% ====================================================================
+
+
+% === I. INTRODUCTION ========================================================
+% =============================================================================
+\section{Objective}
+\blfootnote{$^1$Computer Engineering Bachelor Student of ITA}
+
+This project aimed to manipulate HTTP requests on the Application Layer using Python. The project have been made for the Second Bimester Trail of CES35. In order to manipulate the HTTP requests, the original Objective was to create a Python Web Framework, It was conducted follwing the Rahmonov's tutorial\cite{c1}\cite{c2}\cite{c3}. The Python Web Framework was made to support GET, POST, PUT, DELETE requests, and also supported routing.
+
+After the initial development we found out that the core implementation that imteract directly with the HTTP request is the Web Server Gateway Interface (WSGI), therefore the project core migrated to the WSGI developed.
+
+Nlo haverá deploy em produçjo de servidor web, apenas localhost
+
+Cronograma de atividades.
+4j semana: planejamento das atividades
+5j semana: estudar implementaçjo de exemplo de web framework em Python
+6j semana: desenvolvimento da web framework básica, suportando, ao menos, requisiçjes HTTP GET e POST
+7j semana: continuaçjo do desenvolvimento e finalizaçjo do desenvolvimento
+1j semana de exames: desenvolvimento de material para apresentaçjo final, incluindo simulaçjo cliente/servidor em uma aplicaçjo de exemplo que utiliza o web framework desenvolvido
+
+
+Referjncia:
+http://rahmonov.me/posts/write-python-framework-part-one/
+http://rahmonov.me/posts/write-python-framework-part-two/
+http://rahmonov.me/posts/write-python-framework-part-three/
+
+
+% \IEEEPARstart{T}{h}is works aims to elucidate the \textit{Greedy} and
+ \textit{A*} searches techniques. To do that, it was implemented the \textit{Task 2.1} and the \textit{Task 2.2} in Python. The code can be seen in the attached files.
+
+% ==========================================================================
+\section{Project development}
+What was developed is a Web Framework written in Python running with WSGI also developed by us. The Web Server Gateway Interface (WSGI) is an stadart interface to connect python web frameworks to a server connection socket and interchange data between the socket and the server framework.
+
+The main idea is that the WSGI creates the HTTP server and provides it an HTTP handler. The HTTP server basicly initiate a socket on that port and start to listen to HTTP request. Once it gets a request it passes it to the HTTP handler. The HTTP handler implements the package treatment according to the HTTP protocol, it sets up and read the message headers and handle errors. After that the handler passes all that treated headers and the package to server framework itself, from that point it is the server web framework responsability what will be done regarding that message. After the framework execute what it is to execute to that message, the framework call the WSGI back with the response message and the WSGI delivers that message back to the client.
+
+This interaction between client, WSGI server and web framework application can be seen on the Figure \ref{fig_wsgi}, it represents a sequence diagram of that interaction.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=3.8in]{./imgs/wsgi.jpg}
+  \caption{WSGI Sequence diagram.}
+  \label{fig_wsgi}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=3.8in]{./imgs/project.png}
+  \caption{Project Class architecture.}
+  \label{fig_project}
+  \end{center}
+\end{figure}
+
+The implementation was firstly based on the creation of the proper data structure. In order to do that, it was created the classes \i{Graph}, \i{Node}, and \i{Edge}.
+
+Then it was created an input reader, so the file \i{australia.csv} was read and the equivalent graph created.
+
+Afterward, it was made the methods \i{greedy} and \i{a\_star} on class \i{Graph}; therefore, it was possible to make the search on the graph.
+%-----------------------------------------------------------------------------
+\section{Project validation}
+The implementation also began with the creation of the data structure. To do that it was implemented the classes \i{ImplicitGraph} and \i{DynamicNode}, they define nodes of the search tree.
+
+Thereafter it was besides developed the methods \i{a\_star} and \i{greedy} on the \i{ImplicitGraph} class.
+
+Then it was created the \i{generate\_case} to generate replicable random input for \i{Task 2.2}, and it was also inserted the suggested input from the activity specification.
+%-----------------------------------------------------------------------------
+\section{Conclusion}
+
+\subsection{Discussion}
+ % topic discussion, possible improvements, problesms left, future improvements
+\subsection{Conclusion}
+The work was quite enlightening when it comes to \i{Greedy} and \i{A*} search methods comprehension and exemplification. Its difficulty was right-minded, although the amount of code required made the work duller than complex.
+
+%-----------------------------------------------------------------------------
+
+
+
+% \begin{document}
+
+You can cite an online resource \cite{ford}.
+
+\printbibliography
+
+% \begin{thebibliography}{99}
+% \bibitem{c1} G. O. Young, ÒSynthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15Ð64.
+% \bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123Ð135.
+% \end{thebibliography}
+
+\vfill
+\end{document}
+
+% \begin{figure}
+%   \begin{center}
+%   \includegraphics[width=2.8in]{./figs/a_star0021.png}
+%   \caption{Final state of input from Code \ref{code_input3} after solution.}
+%   \label{fig_2}
+%   \end{center}
+% \end{figure}
+
+% \lstinputlisting[
+%     language=python,
+%     caption={Small input 3x3.},
+%     label={code_input1},
+%     style=cStyle,
+% ]{./../task2/input1.txt}

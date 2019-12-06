@@ -57,6 +57,8 @@ class WebFramework:
         response = ""
 
         request_path = request['PATH_INFO']
+        request_path = request['REQUEST_METHOD']
+        request_path = request['CONTENT_TYPE']
 
         lt = request_path.split('/')
 
