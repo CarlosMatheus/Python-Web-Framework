@@ -211,11 +211,11 @@ INPUT ./texts/usage.py
 INPUT ./texts/usage.py
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT ./texts/test_query.txt
-INPUT ./texts/test_query.txt
-INPUT ./texts/test_query.txt
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT ./texts/test_query.txt
+INPUT ./texts/test_query.txt
+INPUT ./texts/test_query.txt
 INPUT report.aux
 INPUT report.run.xml
 OUTPUT report.run.xml

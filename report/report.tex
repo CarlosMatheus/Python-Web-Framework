@@ -84,13 +84,13 @@ Prof. Lourenço Alves Pereira Jr}
 \section{Objective}
 \blfootnote{$^1$Computer Engineering Bachelor Student of ITA}
 
-This project aimed to manipulate HTTP requests on the Application Layer using Python. The project have been made for the Second Bimester Trail of CES35. In order to manipulate the HTTP requests, the original Objective was to create a Python Web Framework, It was conducted follwing the Rahmonov's tutorial\cite{c1}\cite{c2}\cite{c3}. The Python Web Framework was made to support GET, POST, PUT, DELETE requests, and also supported routing.
+\IEEEPARstart{T}{h}is project aimed to manipulate HTTP requests on the Application Layer using Python. The project has been made for the Second Bimester Trail of CES35. To manipulate the HTTP requests, the original objective was to create a Python Web Framework, It was conducted following the Rahmonov's tutorial\cite{c1}\cite{c2}\cite{c3}. The Python Web Framework was made to support GET, POST, PUT, DELETE requests, and also supported routing.
 
-After the initial development we found out that the core implementation that imteract directly with the HTTP request is the Web Server Gateway Interface (WSGI), therefore the project core migrated to the WSGI developed.
+After the initial development, we found out that the core implementation that interacts directly with the HTTP request is the Web Server Gateway Interface (WSGI), therefore the project core migrated to the WSGI developed.
 
 The initial activity schedule and planning was:
 
-There won't be a production deploy of the web server, just localhost.
+There won't be a production deploy of the webserver, just localhost.
 
 Activity schedules:
 
@@ -98,39 +98,27 @@ Activity schedules:
     \item Week 4: Activity planning
     \item Week 5: Study the implementation of the Python Web Framework.
     \item Week 6: Development of basic framework, supporting, at least, HTTP GET requests.
-    \item Week 8: Development of basic framework, supporting, at least, HTTP GET requests.
+    \item Week 7: Development continuation and finish the presentation content.
+    \item Exam Week 1: Creation of final presentation material, including simulation server/client on an application example that uses the developed framework.
 \end{itemize}
-
-Nlo haverá deploy em produçjo de servidor web, apenas localhost
-
-Cronograma de atividades.
-4j semana: planejamento das atividades
-5j semana: estudar implementaçjo de exemplo de web framework em Python
-6j semana: desenvolvimento da web framework básica, suportando, ao menos, requisiçjes HTTP GET e POST
-7j semana: continuaçjo do desenvolvimento e finalizaçjo do desenvolvimento
-1j semana de exames: desenvolvimento de material para apresentaçjo final, incluindo simulaçjo cliente/servidor em uma aplicaçjo de exemplo que utiliza o web framework desenvolvido
-
-
-% \IEEEPARstart{T}{h}is works aims to elucidate the \textit{Greedy} and
- \textit{A*} searches techniques. To do that, it was implemented the \textit{Task 2.1} and the \textit{Task 2.2} in Python. The code can be seen in the attached files.
 
 % ==========================================================================
 \section{Project development}
 What was developed is a Web Framework written in Python running with WSGI also developed by us. The Web Server Gateway Interface (WSGI) is an stadart interface to connect python web frameworks to a server connection socket and interchange data between the socket and the server framework.
 
-The main idea is that the WSGI creates the HTTP server and provides it an HTTP handler. The HTTP server basicly initiate a socket on that port and start to listen to HTTP request. Once it gets a request it passes it to the HTTP handler. The HTTP handler implements the package treatment according to the HTTP protocol, it sets up and read the message headers and handle errors. After that the handler passes all that treated headers and the package to server framework itself, from that point it is the server web framework responsability what will be done regarding that message. After the framework execute what it is to execute to that message, the framework call the WSGI back with the response message and the WSGI delivers that message back to the client.
+The main idea is that the WSGI creates the HTTP server and provides it an HTTP handler. The HTTP server initiates a socket on that port and starts to listen to an HTTP request. Once it gets a request it passes it to the HTTP handler. The HTTP handler implements the package treatment according to the HTTP protocol, it sets up and read the message headers and handle errors. After that, the handler passes all that treated headers and the package to the server framework itself, from that point it is the server web framework responsibility what will be done regarding that message. After the framework execute what it is to execute to that message, the framework calls the WSGI back with the response message and the WSGI delivers that message back to the client.
 
-This interaction between client, WSGI server and web framework application can be seen on the Figure \ref{fig_wsgi}, it represents a sequence diagram of that interaction.
+This interaction between client, WSGI server and web framework application can be seen in Figure \ref{fig_wsgi}, it represents a sequence diagram of that interaction.
 
 \begin{figure}
   \begin{center}
   \includegraphics[width=3.0in]{./imgs/wsgi.jpg}
-  \caption{WSGI Sequence diagram. The Client send a message that when it arrives on the host computer it goes to the WSGI HTTP server socket. The WSGI process the message and passes it to the Web Framework application. The web framework processes the message and send the response message to the WSGI server. The WSGI sends the message back to the client though its HTTP socket.}
+  \caption{WSGI Sequence diagram. The Client sends a message that when it arrives on the host computer it goes to the WSGI HTTP server socket. The WSGI process the message and passes it to the Web Framework application. The web framework processes the message and sends the response message to the WSGI server. The WSGI sends the message back to the client through its HTTP socket.}
   \label{fig_wsgi}
   \end{center}
 \end{figure}
 
-The hole intereaction between the classes can be seen on the Figure \ref{fig_project}, it shows the project classe, interactions, and hierarch.
+The whole interaction between the classes can be seen in Figure \ref{fig_project}, it shows the project classes, interactions, and hierarch.
 
 \begin{figure}
   \begin{center}
@@ -143,7 +131,7 @@ The hole intereaction between the classes can be seen on the Figure \ref{fig_pro
 
 %-----------------------------------------------------------------------------
 \section{Project validation}
-In order to make every thing work, both the Python Web framework server and the WSGI were successfuly developed and they can be accessed by the \i{Github Repository}$^2$. The usage process can be followed by the repository \i{Readme} file.
+In order to make everything work, both the Python Web framework server and the WSGI were successfully developed and they can be accessed by the \i{Github Repository}$^2$. The usage process can be followed by the repository \i{Readme} file.
 
 \blfootnote{$^2$https://github.com/CarlosMatheus/Python-Web-Framework}
 
@@ -157,11 +145,11 @@ In order to test the code follow the steps:
     \item Now you can access the server by ``http://127.0.0.1:8080''
     \item On the example there are the /, /about, and /put\_test\_route routes.
     \item The / route returns a simple text answer with any HTTP method you send to it.
-    \item The /about route returns a HTTP web page as answer to any HTTP method to that route.
-    \item The /put\_test\_route route tests the PUT HTTP method and give a different response to the PUT method and it accepts a query. An exemple would be as shown on Code \ref{code_test_query}.
+    \item The /about route returns an HTTP web page as an answer to any HTTP method to that route.
+    \item The /put\_test\_route route tests the PUT HTTP method and give a different response to the PUT method and it accepts a query. An example would be as shown on Code \ref{code_test_query}.
 \end{itemize}
 
-The project also supports HTML files. You just have to put them on ``templates'' folder as done on the download repository example. As an example by going to the /about route it is getted an HTML website as shown on Figure \ref{fig_site}.
+The project also supports HTML files. You just have to put them on the ``templates'' folder as done on the download repository example. As an example, by going to the /about the route it is got an HTML website as shown in Figure \ref{fig_site}.
 
 \begin{figure}
   \begin{center}
@@ -171,7 +159,7 @@ The project also supports HTML files. You just have to put them on ``templates''
   \end{center}
 \end{figure}
 
-To summaryse all that information it is possible to follow the usage of the Web Framework on the example Code \ref{code_usage}. The usage is simple, just import the Framework and define the routers function using the rounte decorator as seen on Code \ref{code_decorator}, and then call the start server method.
+To summarize all that information it is possible to follow the usage of the Web Framework on the example Code \ref{code_usage}. The usage is simple, just import the Framework and define the routers function using the route decorator as seen on Code \ref{code_decorator}, and then call the start server method.
 
 \lstinputlisting[
     language=python,
@@ -195,21 +183,18 @@ To summaryse all that information it is possible to follow the usage of the Web 
 ]{./texts/test_query.txt}
 
 
-%-----------------------------------------------------------------------------
+%---------------------------------------------------------------------------
 \section{Conclusion}
 
 \subsection{Discussion}
- % topic discussion, possible improvements, problesms left, future improvements
- The project was developed with a good level of deepness both on WSGI implementation and on Web framework implementation. It surely could be improved in a lot of ways, mostly on the WebFramework side, since it could have better support to CSS files, integration to databases with Models scheme and lot of other features expected from  a web Framework. From the side of the WSGI, it would be possible to implement it deeper and depend less from Python libraries, it would fall on develop many aspacts of the HTTP protocol.
- As future improvements, it could be developed a better suppot for HTML templates in general from the Web Framework side, mostly regarding a better integration with different import files like CSS. Today only images are imported correcly.
+ The project was developed with a good level of deepness both on WSGI implementation and on Web framework implementation. It surely could be improved in a lot of ways, mostly on the web framework side, since it could have better support to CSS files, integration to databases with Models scheme and a lot of other features expected from a web Framework. From the side of the WSGI, it would be possible to implement it deeper and depend less on Python libraries, it would fall on developing many aspects of the HTTP protocol.
+ As future improvements, it could be developed better support for HTML templates in general from the Web Framework side, mostly regarding a better integration with different import files like CSS. Today only images are imported correctly.
 \subsection{Conclusion}
-The work was quite enlightening when it comes to understanding HTTP servers, HTTP handling, WSGI implementation, and the overall workflow of a Web Framework. The results were expresives, since the hole project was developed from scratch and at the end there are a function WSGI connected with a functional Web Framework.
+The work was quite enlightening when it comes to understanding HTTP servers, HTTP handling, WSGI implementation, and the overall workflow of a Web Framework. The results were expresive since the whole project was developed from scratch and in the end, there is a fully functional WSGI connected with a functional Web Framework.
 
-%-----------------------------------------------------------------------------
-
+%-------------------------------------------------------------------------
 
 \printbibliography
-
 
 \vfill
 \end{document}
