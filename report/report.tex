@@ -88,6 +88,19 @@ This project aimed to manipulate HTTP requests on the Application Layer using Py
 
 After the initial development we found out that the core implementation that imteract directly with the HTTP request is the Web Server Gateway Interface (WSGI), therefore the project core migrated to the WSGI developed.
 
+The initial activity schedule and planning was:
+
+There won't be a production deploy of the web server, just localhost.
+
+Activity schedules:
+
+\begin{itemize}
+    \item Week 4: Activity planning
+    \item Week 5: Study the implementation of the Python Web Framework.
+    \item Week 6: Development of basic framework, supporting, at least, HTTP GET requests.
+    \item Week 8: Development of basic framework, supporting, at least, HTTP GET requests.
+\end{itemize}
+
 Nlo haverá deploy em produçjo de servidor web, apenas localhost
 
 Cronograma de atividades.
@@ -96,12 +109,6 @@ Cronograma de atividades.
 6j semana: desenvolvimento da web framework básica, suportando, ao menos, requisiçjes HTTP GET e POST
 7j semana: continuaçjo do desenvolvimento e finalizaçjo do desenvolvimento
 1j semana de exames: desenvolvimento de material para apresentaçjo final, incluindo simulaçjo cliente/servidor em uma aplicaçjo de exemplo que utiliza o web framework desenvolvido
-
-
-Referjncia:
-http://rahmonov.me/posts/write-python-framework-part-one/
-http://rahmonov.me/posts/write-python-framework-part-two/
-http://rahmonov.me/posts/write-python-framework-part-three/
 
 
 % \IEEEPARstart{T}{h}is works aims to elucidate the \textit{Greedy} and
@@ -138,6 +145,8 @@ The hole intereaction between the classes can be seen on the Figure \ref{fig_pro
 \section{Project validation}
 In order to make every thing work, both the Python Web framework server and the WSGI were successfuly developed and they can be accessed by the \i{Github Repository}$^2$. The usage process can be followed by the repository \i{Readme} file.
 
+\blfootnote{$^2$https://github.com/CarlosMatheus/Python-Web-Framework}
+
 In order to test the code follow the steps:
 \begin{itemize}
     \item Clone the repository$^2$.
@@ -162,12 +171,19 @@ The project also supports HTML files. You just have to put them on ``templates''
   \end{center}
 \end{figure}
 
-To summaryse all that information it is possible to follow the usage of the Web Framework on the Code \ref{}
+To summaryse all that information it is possible to follow the usage of the Web Framework on the example Code \ref{code_usage}. The usage is simple, just import the Framework and define the routers function using the rounte decorator as seen on Code \ref{code_decorator}, and then call the start server method.
+
+\lstinputlisting[
+    language=python,
+    caption={Example of routing decorator.},
+    label={code_decorator},
+    style=cStyle,
+]{./texts/decorator_router.txt}
 
 \lstinputlisting[
     language=python,
     caption={Example server file that uses our Python Web Framework },
-    label={code_test_query},
+    label={code_usage},
     style=cStyle,
 ]{./texts/usage.py}
 
@@ -178,30 +194,22 @@ To summaryse all that information it is possible to follow the usage of the Web 
     style=cStyle,
 ]{./texts/test_query.txt}
 
-\blfootnote{$^2$https://github.com/CarlosMatheus/Python-Web-Framework}
 
 %-----------------------------------------------------------------------------
 \section{Conclusion}
 
 \subsection{Discussion}
  % topic discussion, possible improvements, problesms left, future improvements
- omprehension and exemplification. Its difficulty was right-minded, although the amount
+ The project was developed with a good level of deepness both on WSGI implementation and on Web framework implementation. It surely could be improved in a lot of ways, mostly on the WebFramework side, since it could have better support to CSS files, integration to databases with Models scheme and lot of other features expected from  a web Framework. From the side of the WSGI, it would be possible to implement it deeper and depend less from Python libraries, it would fall on develop many aspacts of the HTTP protocol.
+ As future improvements, it could be developed a better suppot for HTML templates in general from the Web Framework side, mostly regarding a better integration with different import files like CSS. Today only images are imported correcly.
 \subsection{Conclusion}
-The work was quite enlightening when it comes to \i{Greedy} and \i{A*} search methods comprehension and exemplification. Its difficulty was right-minded, although the amount of code required made the work duller than complex.
+The work was quite enlightening when it comes to understanding HTTP servers, HTTP handling, WSGI implementation, and the overall workflow of a Web Framework. The results were expresives, since the hole project was developed from scratch and at the end there are a function WSGI connected with a functional Web Framework.
 
 %-----------------------------------------------------------------------------
 
 
-% \begin{document}
-
-You can cite an online resource \cite{ford}.
-
 \printbibliography
 
-% \begin{thebibliography}{99}
-% \bibitem{c1} G. O. Young, ÒSynthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15Ð64.
-% \bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123Ð135.
-% \end{thebibliography}
 
 \vfill
 \end{document}

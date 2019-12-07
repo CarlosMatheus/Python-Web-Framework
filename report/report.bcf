@@ -1977,7 +1977,6 @@
     <bcf:citekey order="1">c1</bcf:citekey>
     <bcf:citekey order="2">c2</bcf:citekey>
     <bcf:citekey order="3">c3</bcf:citekey>
-    <bcf:citekey order="4">ford</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
